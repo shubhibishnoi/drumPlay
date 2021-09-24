@@ -1,0 +1,22 @@
+<button id="btnCancel" type="button">Cancel</button>
+ <button id="btnOk" type="button">Ok</button>
+ <script>
+            // Example of annomyous function
+           document.getElementById("btnOk")    // 1. Find the element in the DOM with the id="btnOk"
+                .addEventListener(              // 2. Attach (wire) an event listener to the element in step 1
+                    "click",                    // 3. Take action when the click event occurs (Ignores other events such as "mouseover", "hover")
+                    function(event) {           // 4. Perform this function when the click event is detected.  This is an anomyous function because it has no name.
+                        console.log(event);
+                    }
+                );
+
+            // Example of callback function
+            document.getElementById("btnCancel")// 1. Find the element in the DOM with the id="btnOk"
+                .addEventListener(              // 2. Attach (wire) an event listener to the element in step 1
+                    "click",                    // 3. Take action when the click event occurs.  (Ignores other events such as "mouseover", "hover")
+                    onBtnOkClickCancel          // 4. Perform this function when the click event is detected. onBtnOkClick is referred to as a  "callback function".
+                );                              // NOTE: Don't include the parenthesis or parameters as it will execute when the code is loaded by the browser.
+
+            function onBtnOkClickCancel(event) {// This function is called when the DOM element with the id="btnOk" is clicked
+                console.log(event);
+            }
